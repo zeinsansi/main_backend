@@ -14,7 +14,7 @@
 	<name>main_backend</name>
 	<description>the main system in Arttok application</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
