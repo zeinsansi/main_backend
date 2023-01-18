@@ -5,9 +5,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "development" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "development" ]
 
 jobs:
   build:
@@ -42,15 +42,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.BACK_END_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zeinsansi_main_backend
-    - name: Google-Lighthouse test
-      uses: actions/setup-java@v3
-      with:
-        java-version: '19'
-        distribution: 'temurin'
-        cache: maven
-    - name: Cypress end-to-end test
-      uses: actions/setup-java@v3
-      with:
-        java-version: '19'
-        distribution: 'temurin'
-        cache: maven
